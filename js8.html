@@ -105,7 +105,7 @@
           <input type="radio" name="gender" value="male" checked> Male
         </label>
         <label class="radio">
-          
+
           <input type="radio" name="gender" value="female"> Female
         </label>
       </div>
@@ -162,10 +162,33 @@
 
   <script>
     function validateForm() {
-      // Perform form validation logic here
-      // You can access form values using document.getElementById('<element-id>').value
-      
-      // Return true to submit the form or false to prevent form submission
+      var firstName = document.getElementById('firstName').value;
+      var lastName = document.getElementById('lastName').value;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var confirmPassword = document.getElementById('confirmPassword').value;
+      var age = document.getElementById('age').value;
+      var phoneNumber = document.getElementById('phoneNumber').value;
+      var address = document.getElementById('address').value;
+      var state = document.getElementById('state').value;
+      var country = document.getElementById('country').value;
+      var declaration = document.getElementById('declaration').checked;
+  
+      // Perform validation checks
+      if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '' || age === '' || phoneNumber === '' || address === '' || state === '' || country === '' || !declaration) {
+        alert('Please fill in all required fields and accept the declaration.');
+        return false; // Prevent form submission
+      }
+  
+      if (password !== confirmPassword) {
+        alert('Passwords do not match.');
+        return false; // Prevent form submission
+      }
+  
+      // Add more validation checks as needed
+  
+      // If all checks pass, allow form submission
+
       return true;
     }
   </script>
